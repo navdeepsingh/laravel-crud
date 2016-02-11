@@ -19,22 +19,24 @@ php artisan make:controller CrudController --resource
 
 ### Common Issues and Solutions
 * Class html does not exist
-> Add in composer.json  "illuminate/html": "5.*"
-> then composer update, 
-> Open your config/app.php and add under 'providers'
 ```sh
+Add in composer.json  "illuminate/html": "5.*"
+then composer update, 
+Open your config/app.php and add under 'providers'
 Illuminate\Html\HtmlServiceProvider::class
-```
-> add under 'aliases'
-```sh
+add under 'aliases'
 'Form'      => Illuminate\Html\FormFacade::class,
 'Html'      => Illuminate\Html\HtmlFacade::class,
 ```
 * Call to undefined method Illuminate\Foundation\Application::bindShared()
->  bindShared has been renamed to $app->singleton()
+```sh
+bindShared has been renamed to $app->singleton()
+```
 * Undefined variable: errors
-> Wrap all your web routes with a route group and apply the web middleware to them:
+```sh
+Wrap all your web routes with a route group and apply the web middleware to them:
 Route::group(['middleware' => 'web'], function() {
+```
 
 
 
