@@ -18,8 +18,8 @@ php artisan make:controller CrudController --resource
 ```
 
 ### Common Issues and Solutions
-* Class html does not exist 
->  Add in composer.json  "illuminate/html": "5.*"
+* Class html does not exist
+> Add in composer.json  "illuminate/html": "5.*"
 > then composer update, 
 > Open your config/app.php and add under 'providers'
 ```sh
@@ -35,6 +35,7 @@ Illuminate\Html\HtmlServiceProvider::class
 * Undefined variable: errors
 > Wrap all your web routes with a route group and apply the web middleware to them:
 Route::group(['middleware' => 'web'], function() {
+
 
 
 ## Official Documentation
